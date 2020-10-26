@@ -58,8 +58,37 @@ var myList = new ArrayList<>(); // => List<Object>
 * Avec le mot clé `var` on ne peut pas initialiser de variable à `null`.
 
 
-## Performances
+### Performances
 
 * **G1GC** (garbage collector) : Fonctionnement en parallèle au leiu de séquentiel.
 
 * **Class data sharing**: Permet de partager des classes communes entre plusieurs instances de JVM. Ce qui peut avoir pour effet de réduire le temps de démarrage de la JVM.
+
+## Java 11
+
+### Scripting 
+
+* Il est possible de lancer des fichiers `.java` directement sans avoir besoin de les compiler au préalable:
+
+```bash
+
+java Main.Java
+
+```
+
+* Il est possible de faire des scripts java:
+ * Ajouter le header : `#! /usr/bin/java --source 11`.
+ * Le fichier n'a pas besoin d'extension: `myScript` :
+ 
+ ```java
+ #! /usr/bin/java --source 11
+ public class Script {
+
+	public static void main(String[] args) {
+		System.out.println("I'm a script");
+	}
+
+}
+ ```
+ 
+ * Pour lancer le script: `./myScript`. 
