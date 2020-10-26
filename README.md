@@ -92,3 +92,44 @@ java Main.Java
  ```
  
  * Pour lancer le script: `./myScript`. 
+ 
+ ### API
+ 
+ #### Suppressions notables
+ 
+ * Java FX supprimé du JDK et déplacé dans openJFX
+ * Jpackager (outil permettant de créer des installeteurs) supprimé.
+ * Applets supprimés.
+ * Java web start supprimé.
+ * Nashorn (Java -> Js ) déprécié.
+ 
+ #### Ajouts notbles
+ 
+ * `String`:
+ 	* Méthode `repeat()` qui permet de répéter un string de multiples fois. 
+	* Méthode `isBlank()` qui permet de vérifier si un string est `null` ou `""`. 
+	* Méthode `strip()` qui permet de retirer les espaces.
+	* Méthode `lines()` qui permet de créer un stream de lignes.
+	
+* `Files`:
+	* Méthode `readString(Path path)` qui permet de lire un fichier en string directement.
+	* Méthode `writeString(Path path, CharSequence, charSequence, Option options)` qui permet d'écrire directement dans un fichier avec des `String`.
+	
+* `Optional`: Méthode `isEmpty()` permettant de vérifier si l'`Optional` est vide.
+
+* `Predicate`: Méthode `not()` qui permet d'inverser les prédicats.
+
+* Possiblité d'utiliser var dans la déclaration des lambdas:
+
+```java
+(var a, var b) -> a + b
+```
+
+* Introduction du concept de **nested classes** qui permet aux **Inner class** d'accèder directement aux méthode de la classe dans laquelle elle est incluse sans que le compilateur ait à recourrir à un **bridge**. 
+	
+	
+### Performances et sécurité
+
+* **Epsilon GC**: Garbage collector expérimental qui permet de ne pas réaliser de garbage collection.
+* **Z Garbage collector**: Garbage collector expérimental spécialisé pour les grandes heap.
+* Implémentation de **TLS 1.3**
