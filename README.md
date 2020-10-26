@@ -2,7 +2,7 @@
 
 ## Java 10
 
-### Inférence de type:
+### Inférence de type
 
 * Avec le mot clé `var` c'est le compilateur qui déduit le type de la variable.
 * Permet: 
@@ -56,3 +56,10 @@ var myList = new ArrayList<>(); // => List<Object>
 * Fonctionne uniquement pour les variables locales. Ne fonctionne par pour les attributs des classes ou les paramétres des méthodes.
 
 * Avec le mot clé `var` on ne peut pas initialiser de variable à `null`.
+
+
+## Performances
+
+* **G1GC** (garbage collector) : Fonctionnement en parallèle au leiu de séquentiel.
+
+* **Class data sharing**: Permet de partager des classes communes entre plusieurs instances de JVM. Ce qui peut avoir pour effet de réduire le temps de démarrage de la JVM.
